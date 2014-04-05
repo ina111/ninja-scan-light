@@ -184,7 +184,7 @@ void mpu6000_init(){
   mpu6000_set(SMPLRT_DIV, 79); // SMPLRT_DIV = 79, 100Hz sampling;
   // CONFIG = 0; // Disable FSYNC, No DLPF
   mpu6000_set(GYRO_CONFIG, (3 << 3)); // FS_SEL = 3 (2000dps)
-  mpu6000_set(ACCEL_CONFIG, (2 << 3)); // AFS_SEL = 2 (8G)
+  mpu6000_set(ACCEL_CONFIG, (3 << 3)); // AFS_SEL = 3 (16G)
   mpu6000_set(FIFO_EN, 0xF8); // FIFO enabled for temperature(2), gyro(2 * 3), accelerometer(2 * 3). Total 14 bytes.
   mpu6000_set(I2C_MST_CTRL, (0xC8 | 13)); // Multi-master, Wait for external sensor, I2C stop then start cond., clk 400KHz
   mpu6000_set(USER_CTRL, 0x70); // Enable FIFO with Master I2C enabled, and primary I2C I/F disabled.
